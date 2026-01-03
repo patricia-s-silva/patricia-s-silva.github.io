@@ -1,0 +1,39 @@
+#socials{
+    float:right;
+    min-width:100px;
+    background-color: white;
+    height: 30px;
+}
+
+#socials a{
+    padding: 5px 10px 5px 5px;
+    background-color: #999;
+    color: white;
+    float: left;
+}
+
+#socials .facebook{
+    background: url(https://ciencias.ulisboa.pt/sites/default/files/fcul/icon_social_facebook.png) 5px center no-repeat rgba(44,63,177,1);
+    padding-left: 30px;
+}
+
+#socials .bluesky{
+    background: url(https://ciencias.ulisboa.pt/sites/default/files/fcul/icon_social_bluesky.png) 5px center no-repeat rgba(44,63,177,1);
+    padding-left: 35px;
+}
+
+#socials .tweet{
+    background: url(https://ciencias.ulisboa.pt/sites/default/files/fcul/icon_social_twitter.png) 5px center no-repeat rgba(44,63,177,1);
+    padding-left: 35px;
+}
+
+#socials .linkedin{
+    background: url(https://ciencias.ulisboa.pt/sites/default/files/fcul/icon_social_linkedin.png) 5px center no-repeat rgba(44,63,177,1);
+    padding-left: 33px;
+}
+
+#socials a:hover{
+    background-color: #999;
+    cursor: pointer;
+    text-decoration: none;
+}

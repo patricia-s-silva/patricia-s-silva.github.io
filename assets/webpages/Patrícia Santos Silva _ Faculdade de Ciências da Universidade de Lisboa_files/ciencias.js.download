@@ -1,0 +1,411 @@
+/** beginning of file **/
+(function ($) {
+    jQuery.extend(verge);
+
+    setTimeout(function() {
+      $(".logo").css("display", "block");
+    }, 100);
+
+    function logo(){
+        $logoHeight = 305;
+        $scrollolo = $(window).scrollTop();
+        $combinedHeight = $logoHeight - $scrollolo;
+        $min = 60; // minimum drag value
+        $pos = 150; // slider position
+        $opac = (($combinedHeight-$min) / ($logoHeight-$min))+0; // 37.5%
+
+        $(".logo-wrapper").height(function(){
+            $(this).height($combinedHeight);
+            $(".logo").css({"opacity": $opac});
+            if ($combinedHeight < 61){
+                $(this).height(60).addClass("fixed");
+
+            } else {
+                $(this).removeClass("fixed");
+            }
+        });
+    }
+
+    function open(){
+        $(".expanded .submenu").stop().slideDown(300);
+        $(".collapsed .submenu").stop().slideUp(300);
+    }
+
+
+    $(document).ready(function () {
+
+        if ($.viewportW()<= 760) {
+            $("body").addClass("mobile");
+            if($("body").hasClass("not-front")) {
+                $.scrollTo( '#main-content', 0, { offset:0} );
+            }
+        } else {
+            $("body").addClass("desktop");
+            if ($("body").hasClass("not-front") && !(window.location.hash)) {
+                  $.scrollTo( '#main-content', 0, { offset:-59} );
+            }
+        }
+
+        $(".home-eventos.home-box h3 a,.home-noticias.home-box h3 a,.home-destaques.home-box h3 a").each(function(index, el) {
+            $(this).html($(this).text());
+        });
+
+        $(".field-collection-container").removeClass("clearfix");
+
+
+        $(".quicklinks li:nth-child(4), .quicklinks li:nth-child(7)").addClass("clear");
+
+        if($("body").hasClass("toolbar")) {
+
+            var tocOffsetValue = -164;
+        } else {
+
+            var tocOffsetValue = -99;
+        }
+
+        $("p:empty").remove()
+
+        $("li.expanded").toggleClass("expanded collapsed");
+        $("li.active.collapsed, li.active-trail.collapsed").toggleClass("collapsed expanded");
+        $(".collapsed .submenu").hide();
+
+        $(".desktop a.setinha, .user-menu a.nolink").click( function(e){
+            e.preventDefault();
+            if ($(this).parent().hasClass("expanded")) {
+                $(this).parent().find(".expanded").toggleClass("expanded collapsed");
+                $(this).parent().toggleClass("expanded collapsed");
+                open();
+                if (!$(this).parents().hasClass("user-menu")){
+                    if($("body").hasClass("toolbar-drawer")) {
+                        $.scrollTo( '#main-content', 300, { offset:-124}, {easing: 'easeOutQuart'} );
+                    } else if($("body:not(.toolbar-drawer)").hasClass("toolbar")) {
+                        $.scrollTo( '#main-content', 300, { offset:-89}, {easing: 'easeOutQuart'} );
+                    } else {
+                        $.scrollTo( '#main-content', 300, { offset:-59}, {easing: 'easeOutQuart'} );
+                    }
+                }
+            } else {
+                $(this).parents("li").siblings(".expanded").find(".expanded").toggleClass("expanded collapsed");
+                $(this).parents("li").siblings(".expanded").toggleClass("expanded collapsed");
+                $(this).parent().toggleClass("collapsed expanded");
+                open();
+                if (!$(this).parents().hasClass("user-menu")){
+                    if($("body").hasClass("toolbar-drawer")) {
+                        $.scrollTo( '#main-content', 300, { offset:-124}, {easing: 'easeOutQuart'} );
+                    } else if($("body:not(.toolbar-drawer)").hasClass("toolbar")) {
+                        $.scrollTo( '#main-content', 300, { offset:-89}, {easing: 'easeOutQuart'} );
+                    } else {
+                        $.scrollTo( '#main-content', 300, { offset:-59}, {easing: 'easeOutQuart'} );
+                    }
+                }
+            }
+
+
+        });
+        $(".mobile a.setinha, .user-menu a.nolink").click( function(e){
+            e.preventDefault();
+            if ($(this).parent().hasClass("expanded")) {
+                $(this).parent().find(".expanded").toggleClass("expanded collapsed");
+                $(this).parent().toggleClass("expanded collapsed");
+                open();
+                $.scrollTo( $(".logo-wrapper"), 200, { offset:0}, {easing: 'easeOutQuart'} );
+            } else {
+                $(this).parents("li").siblings(".expanded").find(".expanded").toggleClass("expanded collapsed");
+                $(this).parents("li").siblings(".expanded").toggleClass("expanded collapsed");
+                $(this).parent().toggleClass("collapsed expanded");
+                open();
+                $(".expanded .submenu").queue(function(){
+                    $.scrollTo( $(this), 200, { offset:-43}, {easing: 'easeOutQuart'} );
+                $(this).dequeue();
+                });
+            }
+
+        });
+
+
+        $(".backtotop").localScroll({
+            queue:true,
+            duration:800,
+            hash:true,
+            easing:'easeOutQuart',
+            onBefore:function( e, anchor, $target ){
+                // The 'this' is the settings object, can be modified
+            },
+            onAfter:function( anchor, settings ){
+                // The 'this' contains the scrolled element (#content)
+            }
+        });
+
+        $('#toc').toc({
+            'selectors': 'h2:not(".no-anchor, .of-titles, .of-label, .ru h2")', //elements to use as headings
+            'container': '#main-content .content', //element to find all selectors in
+            'smoothScrolling': false, //enable or disable smooth scrolling on click
+            'prefix': 'toc', //prefix for anchor tags and class names
+            'onHighlight': function(el) {}, //called when a new section is highlighted
+            'highlightOnScroll': true, //add class to heading that is currently in focus
+            'highlightOffset': 100, //offset to trigger the next headline
+            'anchorName': function(i, heading, prefix) { //custom function for anchor name
+                return prefix+i;
+            },
+            'headerText': function(i, heading, $heading) { //custom function building the header-item text
+                //$testReturn = $heading.html();
+                //return $testReturn;
+                return $heading.text();
+            },
+            'itemClass': function(i, heading, $heading, prefix) { // custom function for item class
+              return $heading[0].tagName.toLowerCase();
+            }
+        });
+
+        if ($('#toc ul li').length) {
+            $("#toc").prepend("<h3>" + Drupal.t('On this Page:') + "</h3>");
+        }
+		
+		
+		/*Fix para o scroll automatico do toc (não tinha em conta a toolbar)*/
+		$("span[id^=toc]").css("top","-130px");
+		$("span[id^=toc]").css("position","relative"); 
+		
+        $(window).load(function() {
+            $('#toc').localScroll({
+                queue:true,
+                duration:800,
+                offset: tocOffsetValue,
+                hash:true,
+                easing:'easeOutQuart',
+                onBefore:function( e, anchor, $target ){
+                    // The 'this' is the settings object, can be modified
+                },
+                onAfter:function( anchor, settings ){
+                    // The 'this' contains the scrolled element (#content)
+                }
+            });
+        });
+
+        $('.destaque-gallery').flickity({
+          // options
+          imagesLoaded: true,
+          cellSelector: '.destaques-item',
+          cellAlign: 'left',
+          prevNextButtons: false,
+          autoPlay: 5000,
+          contain: true,
+          wrapAround: true
+        });
+
+        // Loja Ciências
+
+        var $lojaFlick = $('.flickity-wrapper').flickity({
+          // options
+          imagesLoaded: true,
+          cellSelector: 'img',
+          cellAlign: 'left',
+          prevNextButtons: false,
+          autoPlay: true,
+          contain: true,
+          wrapAround: true,
+          lazyLoad: 2,
+        //   resize: false,
+        //   setGallerySize: false,
+          pageDots: false
+        });
+
+        var $lojaGrid = $('.loja-ciencias').imagesLoaded( function() {
+          // init Isotope after all images have loaded
+          $lojaGrid.isotope({
+            itemSelector: '.loja-ciencias-artigo',
+            percentPosition: true,
+            // isOriginTop: false,
+            layoutMode: 'fitRows'
+          });
+          $lojaGrid.on( 'click', '.loja-ciencias-expand-button', function() {
+            $(".loja-ciencias-artigo-full-size").not($(this).parents()).removeClass("loja-ciencias-artigo-full-size");
+            $(this).parents(".loja-ciencias-artigo").toggleClass('loja-ciencias-artigo-full-size');
+            // trigger layout after item size changes
+            $lojaFlick.flickity('resize');
+            $lojaGrid.isotope('layout');
+
+            });
+
+        });
+        $(window).resize(function() {
+            $lojaFlick.flickity('resize');
+            $lojaGrid.isotope('layout');
+        });
+
+
+
+
+        // End of Loja Ciências
+
+        $(".hamb-nav").click(function(e){
+            e.preventDefault();
+            if($("body").hasClass("page-user")) {
+            } else {
+                $(".leftbar nav").toggleClass("visible");
+            }
+        });
+
+
+    });
+
+    $(document).ajaxComplete(function(){
+        $(".hamb-nav").click(function(e){
+            e.preventDefault();
+            if($("body").hasClass("page-user")) {
+                $(".leftbar nav").toggleClass("visible");
+            } else {
+            }
+        });
+        // $(".of-content-wrapper").addClass("clearfix");
+    });
+
+    $(window).load(function() {
+        if ($.viewportW()<= 760) {
+            if($("body").hasClass("not-front")) {
+                $.scrollTo( '#main-content', 0, { offset:0} );
+            }
+        } else {
+            $("body").addClass("desktop");
+            if($("body").hasClass("not-front")) {
+                $.scrollTo( '#main-content', 0, { offset:-59} );
+            }
+        }
+    });
+
+//$(document).ajaxComplete(function(){
+//    // fire when any Ajax requests complete
+//    if($("body").hasClass("toolbar-drawer")) {
+//        var tocOffsetValue = -164;
+//    } else {
+//        var tocOffsetValue = -99;
+//    }
+//    $('.of-content-wrapper #toc').toc({
+//        'selectors': 'h2:not(".no-anchor, .of-titles, .of-label")', //elements to use as headings
+//        'container': '#main-content .content', //element to find all selectors in
+//        'smoothScrolling': false, //enable or disable smooth scrolling on click
+//        'prefix': 'toc', //prefix for anchor tags and class names
+//        'onHighlight': function(el) {}, //called when a new section is highlighted
+//        'highlightOnScroll': true, //add class to heading that is currently in focus
+//        'highlightOffset': 100, //offset to trigger the next headline
+//        'anchorName': function(i, heading, prefix) { //custom function for anchor name
+//            return prefix+i;
+//        },
+//        'headerText': function(i, heading, $heading) { //custom function building the header-item text
+//            //$testReturn = $heading.html();
+//            //return $testReturn;
+//            return $heading.text();
+//        },
+//        'itemClass': function(i, heading, $heading, prefix) { // custom function for item class
+//          return $heading[0].tagName.toLowerCase();
+//        }
+//    }).localScroll({
+//    queue:true,
+//    duration:800,
+//    offset: tocOffsetValue,
+//    hash:true,
+//    easing:'easeOutQuart',
+//    onBefore:function( e, anchor, $target ){
+//            // The 'this' is the settings object, can be modified
+//        },
+//        onAfter:function( anchor, settings ){
+//            // The 'this' contains the scrolled element (#content)
+//        }
+//    });
+//    if ($('.of-content-wrapper #toc ul li').length) {
+//        $(".of-content-wrapper #toc").prepend("<h3>Nesta Página:</h3>");
+//    }
+//    //$("active a.tab_menu").click(function(e){
+//    //    e.preventDefault;
+//    //})
+//})
+
+    var fullmobileFunctions = function() {
+
+        $(".breadcrumb-wrapper").trigger('detach.ScrollToFixed');
+
+        $(document).ready(function () {
+            $("body").removeClass("desktop mobile");
+            $("body").addClass("mobile");
+            if($("body").hasClass("toolbar")) {
+            } else {
+            $(".breadcrumb-wrapper").scrollToFixed({
+                marginTop: 0,
+                removeOffsets: true,
+                fixed: function() { $(this).addClass("breadfixed"); },
+                postFixed: function() { $(this).removeClass("breadfixed"); },
+                limit: function() {
+                    var limit = $('footer').offset().top - 220;
+                    return limit;
+                }
+
+            });
+            }
+
+        });
+
+        $(window).load(function() {
+            if($("body").hasClass("not-front")) {
+                $.scrollTo( '#main-content', 0, { offset:0} );
+            }
+        });
+    }
+
+    var fulldesktopFunctions = function() {
+
+        $(".breadcrumb-wrapper").trigger('detach.ScrollToFixed');
+
+        $(document).ready(function () {
+            $("body").removeClass("desktop mobile");
+            $("body").addClass("desktop");
+            if($("body").hasClass("toolbar")) {
+                // $(".breadcrumb-wrapper").scrollToFixed({
+                //     marginTop: 125,
+                //     fixed: function() { $(this).addClass("breadfixed"); },
+                //     postFixed: function() { $(this).removeClass("breadfixed"); }
+                // });
+            } else {
+                $(".breadcrumb-wrapper").scrollToFixed({
+                    marginTop: 60,
+                    fixed: function() { $(this).addClass("breadfixed"); },
+                    postFixed: function() { $(this).removeClass("breadfixed"); }
+                });
+            }
+
+        });
+
+        $(window).load(function() {
+            // $('.destaque-gallery').flickity('reloadCells');
+            if($("body").hasClass("not-front")) {
+                $.scrollTo( '#main-content', 0, { offset:-59} );
+            }
+        });
+
+        $(window).scroll(function() {
+            logo();
+        });
+
+        $(window).resize(function() {
+            logo();
+        });
+    }
+
+    var fullmobileCheck = function() {
+        if ($.viewportW()<= 760) {
+            // $("body").addClass("mobile");
+            fullmobileFunctions();
+            // console.log("mobile");
+        } else {
+            // $("body").addClass("desktop");
+            fulldesktopFunctions();
+            // console.log("desktop");
+        }
+    }
+
+    fullmobileCheck();
+
+    $(window).resize(function() {
+        fullmobileCheck();
+    });
+
+})(jQuery);

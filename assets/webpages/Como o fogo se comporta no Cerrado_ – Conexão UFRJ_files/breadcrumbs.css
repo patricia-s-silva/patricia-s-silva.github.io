@@ -1,0 +1,31 @@
+.breadcrumb {
+  padding: 109px 15px 15px 40px;
+  margin-bottom: 20px;
+  list-style: none;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+}
+.breadcrumb a {
+  color: #428bca;
+  text-decoration: none;
+}
+
+.breadcrumbs li * {
+  text-decoration: none;
+  font-family: var(--font-sans);
+  font-size: 1.3rem;
+  line-height: 1.538461rem;
+  font-weight: 500;
+  color: var(--color-featured);
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  margin-right: 8px;
+  display: ruby;
+}
+
+.breadcrumbs li:first-of-type a::before {
+  content: 'home';
+  font-family: "Material Icons";
+  margin-right: 0;
+  text-transform: none;
+}

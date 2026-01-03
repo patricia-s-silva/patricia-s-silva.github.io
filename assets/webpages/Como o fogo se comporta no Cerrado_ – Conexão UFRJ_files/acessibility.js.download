@@ -1,0 +1,59 @@
+(function($){ 
+  $size = localStorage.getItem('fontSize');
+  $contrast = localStorage.getItem('contrast');
+
+  $('*').each(function() {
+    // Tamanho da fonte
+    if ($size === 'aumentar') $(this).css('font-size', `${parseFloat($(this).css('font-size')) * 1.1}px`);
+    else if ($size === 'diminuir') $(this).css('font-size', `${parseFloat($(this).css('font-size')) * 0.8}px`);
+
+    // Contraste
+    if ($contrast === '1') $('body').addClass('contraste');
+  });
+
+  // Botões
+  $('.btnfont').click(function() { 
+    $val = $(this).attr('data-value');
+    if ($val === localStorage.getItem('fontSize')) return;
+    else if ($val) localStorage.setItem('fontSize', $val); 
+    else localStorage.removeItem('fontSize');
+    location.reload();
+  });
+
+  $('.btncontrast').click(function() {
+    if (!$contrast) localStorage.setItem('contrast', '1'); 
+    else localStorage.removeItem('contrast');
+    location.reload();
+  });
+
+  // Navegação pelo teclado
+  $(document).keydown(function (e) {
+    if (e.altKey) {
+      switch (e.keyCode) {
+        case 49: // Começo da página (Alt + 1)
+          e.preventDefault();
+          e.stopPropagation();
+          $(window).scrollTop(0);
+          break;
+        case 50: // Início do menu (Alt + 2)
+          e.preventDefault();
+          e.stopPropagation();
+          $('.menu-modal').toggleClass('show-modal active');
+          $('.menu-modal a').first().focus();
+          break;
+        case 51: // Ativa a busca (Alt + 3)
+          e.preventDefault();
+          e.stopPropagation();
+          $('.search-modal').toggleClass('show-modal active');
+          $('.search-modal .search-field').focus();
+          break;
+        case 52: // Rodapé (Alt + 4)
+          e.preventDefault();
+          e.stopPropagation();
+          $(window).scrollTop($('#site-footer').offset().top);
+          break;
+      }
+    }
+  })
+  
+})(jQuery);

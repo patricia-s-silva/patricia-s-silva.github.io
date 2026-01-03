@@ -1,0 +1,34 @@
+(function($){
+  $(document).ready(function() {
+    jsSocials.setDefaults("email", {
+      logo: 'fa fa-envelope'
+    });
+
+    jsSocials.setDefaults("whatsapp", {
+      logo: 'fab fa-whatsapp',
+      shareUrl: 'https://wa.me/?text={url}'
+    });
+
+    jsSocials.setDefaults("facebook", {
+      logo: 'fab fa-facebook-f'
+    });
+
+    jsSocials.setDefaults("twitter", {
+      logo: 'fab fa-twitter'
+    });
+
+    jsSocials.setDefaults("telegram", {
+      shareUrl: 'https://t.me/share/url?url={url}'
+    });
+
+    $(".shareRoundIcons").each(function() {
+      $(this).jsSocials({
+        showLabel: false,
+        showCount: false,
+        shares: ["facebook", "twitter", "whatsapp", "telegram", "email"],
+        url: $(this).attr('data-url'),
+        shareIn: 'popup'
+      });
+    });
+  });  
+})(jQuery);

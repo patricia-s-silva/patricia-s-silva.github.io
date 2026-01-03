@@ -1,0 +1,456 @@
+/* Reset CSS */
+/* http://meyerweb.com/eric/tools/css/reset/ 2. v2.0 | 20110126
+  License: none (public domain) */
+/*html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+} */
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+} 
+
+/* Class selector */
+.header {
+    text-align: center;
+    height: 240px;
+    background: #F5F5F5;
+    color: #ffffff;
+    font-size: 12px;
+    padding:30px; 
+    font-family: system-ui, sans-serif; 
+    background-image: url("D:\\WebDesign\\My_website\\assets\\images\\header.jpg"); 
+    background-size: cover;
+  }
+
+.footer {
+  padding: 45px 16px;
+  text-align: center;
+  background-color: #000000;
+  color: #ffffff;
+  font-size: 12px;
+}  
+
+.button_profile {
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  font-family: 'Franklin Gothic';
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  background-color: none;
+  color: #ffffff;
+  /* border: 1px solid #707070; */
+  letter-spacing: 1px;
+  /* border-radius: 20px; */
+}
+
+.button_profile:hover {
+  background-color: #d3d3d3;
+  color: rgb(0, 0, 0);
+  border-radius: 20px;
+}
+
+.crop img {
+  object-fit:scale-down;
+  width:  100px;
+  height: 220px;
+}
+
+/* .section {
+  display: inline-block;
+  border: none;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 75%;
+  padding: 10px;
+  box-shadow: 0 2px 4px darkslategray;
+  text-align: center;
+  background-color: rgb(247, 247, 247);
+} */
+
+.section_left_30 {
+  float: left;
+  width: 25%;
+  height: 230px;
+  margin-right: auto;
+  margin-left: 10%;
+  background-color: none;
+  align-items: right;
+}
+
+.section_right_70 {
+  float: right;
+  width: 55%;
+  height: 230px; 
+  margin-right: 10%;
+  background-color: none;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  display: block;
+}
+
+.section_left_50 {
+  float: left;
+  width: 48%;
+  height: auto;
+  margin-left: 1%;
+  margin-right: 1%;
+  background-color: none;
+  align-items: right;
+}
+
+.section_right_50 {
+  float: right;
+  width: 48%;
+  height: auto; 
+  margin-left: 1%;
+  margin-right: 1%;
+  background-color: none;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  display: block;
+}
+
+.image-with-border {
+    padding: 5px;
+    background:white; 
+    border: 2px solid grey;
+    border-radius: 20px
+}
+
+.image40-rounded-corners {
+  width: 40%; 
+  float: right; 
+  border-radius: 10%; 
+  margin-left: 20px; 
+  padding: 15px
+}
+
+/* Type selectors */
+
+nav {
+  padding: 10px;
+  text-align: center;
+  background-color: #000000;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  text-align: center;
+}
+
+section {
+  background-color: whitesmoke;
+  display: inline-block; 
+  text-align: left;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 2%;
+  width: 68%;
+  box-shadow: 0 2px 4px darkslategray;
+}
+
+/* section_left_align {
+  background-color: whitesmoke;
+  display: inline-block; 
+  text-align: left;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 2%;
+  width: 68%;
+  box-shadow: 0 2px 4px darkslategray;
+} */
+
+.sectionbooks {
+  background-color: none;
+  display: inline-block; 
+  text-align: justify;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 2%;
+  width: 95%;
+}
+
+.smallertext {
+  font-size: 15px;
+}
+
+h1 {
+  font-family: "Trebuchet MS", sans-serif;
+}
+
+h2 {
+  font-size: 20px;
+  letter-spacing: 2px;
+  font-variant: small-caps;
+  color: rgb(63, 111, 146);
+} 
+
+h3_background {
+  display: flex;
+  font-size: 16px;
+  letter-spacing: 2px;
+  font-variant: small-caps;
+  background-color: rgb(208, 208, 208); /* 136, 156, 179 */
+  padding: 5px;
+  border-radius: 5px;
+  /* align-items: center; */
+}
+
+text_header {
+  font-size: 16px;
+  letter-spacing: 0px;
+  font-family: "Cambria", sans-serif;
+} 
+
+/* Style all font awesome icons */
+.fa {
+  font-size: 50px;
+  width: 20px;
+  text-align: center;
+  text-decoration: none;
+}
+
+/* Add a hover effect if you want */
+.fa:hover {
+  opacity: 0.7;
+}
+
+/* Set a specific color for each brand */
+
+/* Facebook */
+.fa-facebook {
+  color: white;
+}
+
+/* Twitter */
+.fa-twitter {
+  color: white;
+}
+
+.button {
+  background-color: none; 
+  border: none;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+}
+
+.button1 {
+  border-radius: 10px;
+  border: 1px solid #000000;
+  font-family: "Trebuchet MS", sans-serif;
+  padding: 8px;
+  background-color: rgb(168, 178, 189);
+}
+
+.fit img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+progress {
+  border-radius: 7px; 
+  width: 200px;
+  height: 15px;
+  margin-left: auto;
+  box-shadow: 1px 1px 4px rgba( 0, 0, 0, 0.2 );
+}
+progress::-webkit-progress-bar {
+  background-color: whitesmoke;
+  border-radius: 7px;
+}
+progress::-webkit-progress-value {
+  background-color: steelblue;
+  border-radius: 7px;
+  /* box-shadow: 1px 1px 5px 3px rgba(0, 0, 0, 0.8); */
+}
+
+/* Create two equal columns that floats next to each other */
+.column_left {
+  float: left;
+  width: 50%;
+  display: inline;
+  text-align: left;
+}
+
+.column_right {
+  float: left;
+  width: 49%;
+  display: inline;
+  text-align: right;
+  margin-right: 1%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Hovering text on top of images */
+/* Educational materials neste momento */
+
+.imghover {
+  opacity: 1;
+  display: inline;
+  width: 45%;
+  border-radius: 10%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  line-height: 100%;
+  text-align: center;
+}
+
+.container {
+  position: relative;
+  width: 50%;
+}
+
+.container:hover .imghover {
+  opacity: 0.3;
+}
+
+.container:hover .middle {
+  opacity: 1;
+}
+
+.texthover a {
+  background-color: white;
+  color: black;
+  font-size: 16px;
+  padding: 16px 32px;
+  font-family: "Trebuchet MS", sans-serif;
+  font-variant: small-caps;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* DOI buttons */
+
+.divider {
+  display:inline-block;
+  padding: 10px;
+  vertical-align: middle;
+}
+
+.DOItext a {
+  font-size: 14px;
+  color: black;
+  font-family: "Trebuchet MS", sans-serif;
+  font-variant: small-caps;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.button2 {
+  background-color: #ffffff;
+  border: 2px solid #494949;
+  border-radius: 5px;
+  padding: 5px;
+  border-width: thin;
+}
+
+DOItitle {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+DOIauthors {
+  font-size: 14px;
+  font-style: italic; 
+}
+
+DOIjournal {
+  font-size: 14px;
+}
+
+/* Details */
+
+summary {
+  list-style: none;
+  display: flex;
+  background-color: rgb(208, 208, 208); /* rgb(168, 178, 189); 136, 156, 179 */
+  padding: 10px;
+  border-radius: 5px;
+  align-items: center;
+}
+
+summary::after {
+  content: '';
+  width: 18px;
+  height: 15px;
+  background: url('D:/WebDesign/My_website/assets/images/down-arrow.svg');
+  background-size: cover;
+  margin-left: .75em;
+  transition: 0.2s;
+}
+
+details {
+  border-radius: 5px;
+  padding: 10px;
+  font-family: system-ui, sans-serif;
+}
+
+details[open] > summary::after {
+  transform: rotate(180deg);
+  background-color: rgb(208, 208, 208);
+  border-radius: 5px 5px 0 0;
+}
+
+/* Center images in Home */
+
+.latest {
+  text-align: center;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: 30px;
+  padding: 0px;
+  border:2px solid #6c6c6c;
+  box-shadow: 8px 8px 10px rgba(0, 0, 0, 0.5);
+}

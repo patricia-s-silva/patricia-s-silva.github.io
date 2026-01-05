@@ -37,7 +37,7 @@ footer, header, hgroup, menu, nav, section {
     font-size: 12px;
     padding:30px; 
     font-family: system-ui, sans-serif; 
-    background-image: url(../images/header.jpg); 
+    background-image: url(header.jpg); 
     background-size: cover;
   }
 

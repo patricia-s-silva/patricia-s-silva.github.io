@@ -1,12 +1,6 @@
 <footer class="site-footer">
   <div class="container footer-inner">
-    <p class="footer-text">
-      © <span id="year"></span> Patrícia S. Silva 
-    </p>
+    <p class="footer-text">© {{ site.time | date: '%Y' }} {{ site.title }}</p>
+    <p class="footer-text"><a href="{{ '/policy/' | relative_url }}">Policy</a></p>
   </div>
 </footer>
-
-<script>
-  // Optional: only if you want auto-year without rebuild
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>

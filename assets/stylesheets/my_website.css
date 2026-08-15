@@ -57,6 +57,34 @@ section {
 }
 
 /* Header */
+.header {
+  text-align: center;
+
+  /* Don’t fix the height; let content define it */
+  height: auto;
+  min-height: 240px;
+
+  /* Spacing that works on mobile and desktop */
+  padding: clamp(18px, 4vw, 32px);
+
+  font-family: system-ui, sans-serif;
+
+  /* Background image with readable overlay */
+  background-image:
+    linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)),
+    url("../images/header.jpg");
+  background-size: cover;
+  background-position: center;
+
+  /* Text should be readable on top of the image */
+  color: #ffffff;
+}
+.text_header {
+  font-size: 16px;
+  letter-spacing: 0px;
+  font-family: Cambria, Georgia, "Times New Roman", serif;
+  margin-top: .5rem;
+}
 .header-inner {
   display: flex;
   align-items: center;
@@ -65,10 +93,14 @@ section {
   flex-wrap: wrap;
 }
 .site-nav {
+  padding: 10px;
+  text-align: center;
+  background-color: #000000;
   display: flex;
   gap: .75rem;
+  justify-content: center;
   flex-wrap: wrap;
-}
+} 
 .social {
   display: flex;
   gap: .5rem;

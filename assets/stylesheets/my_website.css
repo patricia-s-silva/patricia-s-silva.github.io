@@ -28,6 +28,34 @@ footer, header, hgroup, menu, nav, section {
   display: block;
 } 
 
+/* 1) Base sizing and readable layout */
+* { box-sizing: border-box; }
+
+:root {
+  --content-max: 72ch;
+  --gutter: clamp(1rem, 4vw, 2rem);
+  --section-pad: clamp(1.25rem, 3vw, 2.5rem);
+}
+
+body {
+  margin: 0;
+  line-height: 1.6;
+}
+
+main {
+  padding-inline: var(--gutter);
+}
+
+.section,
+section {
+  padding-block: var(--section-pad);
+}
+
+.container {
+  max-width: var(--content-max);
+  margin-inline: auto;
+}
+
 /* Class selector */
 .header {
     text-align: center;

@@ -3,6 +3,5 @@ description: Academic website
 url: "https://patricia-s-silva.github.io"
 baseurl: "" # if this is a user/organization site. For project sites, set "/REPO-NAME"
 
-markdown: kramdown
 plugins:
   - jekyll-sitemap

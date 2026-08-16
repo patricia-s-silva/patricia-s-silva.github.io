@@ -173,8 +173,12 @@ section {
   border-radius: 12px;
   flex: 0 0 auto;
 }
-.media-body { min-width: 0; } /* prevents overflow on long words/links */
-@media (max-width: 640px) {
+.media-body { 
+  min-width: 0; 
+  flex: 1 1 auto;
+} /* prevents overflow on long words/links */
+
+@media (max-width: 720px) {
   .media-block {
     flex: 1 1 auto;
     min-width: 0; 
@@ -182,6 +186,7 @@ section {
     align-items: center;
     text-align: left; /* or center, your preference */
   }
+  .media-block > img { width: min(320px, 100%); }
 }
 
 /* Control the image size */
@@ -192,16 +197,6 @@ section {
   border-radius: 16px;
   border: 1px solid #e6e6e6;
   background: #f4f4f4;              /* helps transparent PNGs */
-}
-
-/* On small screens, stack */
-@media (max-width: 720px) {
-  .media-block {
-    flex-direction: column;
-  }
-  .media-block > img {
-    width: min(320px, 100%);
-  }
 }
 /* Image and text blocks */
 

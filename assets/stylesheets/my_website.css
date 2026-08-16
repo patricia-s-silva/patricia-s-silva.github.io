@@ -133,7 +133,7 @@ section {
   margin-right: calc(50% - 50vw);
   box-sizing: border-box;
   background: #000000;
-  color: #fff;
+  color: #000000;
   padding: 18px 0;
 }
 /* Inner footer content alignment */
@@ -147,7 +147,6 @@ section {
   justify-content: center; /* center across the page */
   align-items: center;
   flex-wrap: wrap;
-  background: #000000;
 }
 /* Footer text/link styling */
 .site-footer .footer-text{
@@ -228,27 +227,6 @@ section {
   background: #f4f4f4;              /* helps transparent PNGs */
 }
 /* Image and text blocks */
-
-/* Class selector 
-.header {
-    text-align: center;
-    height: 240px;
-    background: #F5F5F5;
-    color: #ffffff;
-    font-size: 12px;
-    padding:30px; 
-    font-family: system-ui, sans-serif; 
-    background-image: url(header.jpg); 
-    background-size: cover;
-  }
-
-.footer {
-  padding: 45px 16px;
-  text-align: center;
-  background-color: #000000;
-  color: #ffffff;
-  font-size: 12px;
-}  */
 
 .button_profile {
   border: none;

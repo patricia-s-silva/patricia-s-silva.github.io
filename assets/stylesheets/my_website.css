@@ -499,19 +499,6 @@ progress::-webkit-progress-value {
   text-align: center;
 }
 
-.container {
-  position: relative;
-  width: 50%;
-}
-
-.container:hover .imghover {
-  opacity: 0.3;
-}
-
-.container:hover .middle {
-  opacity: 1;
-}
-
 .texthover a {
   background-color: white;
   color: black;

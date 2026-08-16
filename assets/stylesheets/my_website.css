@@ -133,7 +133,7 @@ section {
   margin-right: calc(50% - 50vw);
   box-sizing: border-box;
   background: #000000;
-  color: #000000;
+  color: #fff;
   padding: 18px 0;
 }
 /* Inner footer content alignment */

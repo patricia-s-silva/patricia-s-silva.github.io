@@ -56,6 +56,10 @@ section {
   margin-inline: auto;
 }
 
+.container.media-block {
+  max-width: 1200px;
+}
+
 /* Header */
 .header {
   text-align: center;

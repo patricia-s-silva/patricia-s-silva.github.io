@@ -669,7 +669,7 @@ main,
   background-color: #000000;
 }
 
-/* Keep header content aligned with the rest of the page */
+/* Keep header content aligned with the rest of the page
 .header > * {
   max-width: 1200px;
   margin-left: auto;
@@ -677,6 +677,36 @@ main,
   padding-left: clamp(16px, 3vw, 32px);
   padding-right: clamp(16px, 3vw, 32px);
   box-sizing: border-box;
+} */
+ /* Let header content span full viewport width (do NOT constrain like .header > *) */
+.header > *{
+  max-width: none !important;
+  width: 100% !important;
+}
+
+/* Full-width inner wrapper + centered content */
+.header .header__inner{
+  max-width: none !important;
+  width: 100% !important;
+
+  display: flex;
+  justify-content: center;   /* center the whole header-id block */
+  align-items: center;
+  flex-direction: column;    /* stack name, icons, role */
+  gap: 0.5rem;
+
+  padding-left: clamp(16px, 3vw, 32px);
+  padding-right: clamp(16px, 3vw, 32px);
+  box-sizing: border-box;
+}
+
+/* Ensure text + icons are centered */
+.header .header-id{
+  text-align: center;
+}
+
+.header .social{
+  justify-content: center;
 }
 
 /* Full-bleed nav background (break out of any theme container) */

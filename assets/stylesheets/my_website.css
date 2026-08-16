@@ -104,14 +104,19 @@ section {
 }
 .site-nav {
   width: 100%;
-  padding: 10px;
-  text-align: center;
-  background-color: #000000;
-  /* display: flex; */
-  gap: .75rem;
-  justify-content: center;
-  /* flex-wrap: wrap; */
+  background: #000000;
+  border-top: 1px solid rgba(0,0,0,0.10);
+  border-bottom: 1px solid rgba(0,0,0,0.10);
 } 
+.site-nav .nav-inner{
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  flex-wrap: wrap;
+}
 .social {
   display: flex;
   gap: .5rem;

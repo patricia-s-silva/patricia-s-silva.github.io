@@ -95,12 +95,17 @@ section {
   gap: 1rem;
   flex-wrap: wrap;
 }
+/* Center the name + role text */
+.header .header-id{
+  text-align: center;
+}
 .header-id .social{
   margin-top: 10px;
   display: flex;
   gap: 12px;
   align-items: center;
   flex-wrap: wrap;
+  justify-content: center;
 }
 .site-nav {
   width: 100%;
@@ -116,6 +121,7 @@ section {
   padding-top: 12px;
   padding-bottom: 12px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 .social {
   display: flex;
@@ -419,12 +425,6 @@ h3_background {
   border-radius: 5px;
   /* align-items: center; */
 }
-
-text_header {
-  font-size: 16px;
-  letter-spacing: 0px;
-  font-family: "Cambria", sans-serif;
-} 
 
 /* Style all font awesome icons */
 .fa {

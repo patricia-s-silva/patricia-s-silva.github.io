@@ -87,6 +87,7 @@ section {
   letter-spacing: 0px;
   font-family: Cambria, Georgia, "Times New Roman", serif;
   margin-top: .5rem;
+  text-align: center;
 }
 .header-inner {
   display: flex;

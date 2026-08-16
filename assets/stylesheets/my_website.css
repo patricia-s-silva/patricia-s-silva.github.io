@@ -132,7 +132,7 @@ section {
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
   box-sizing: border-box;
-  background: #000;
+  background: #000000;
   color: #fff;
   padding: 18px 0;
 }
@@ -142,12 +142,12 @@ section {
   margin: 0 auto;
   padding-left: clamp(16px, 3vw, 32px);
   padding-right: clamp(16px, 3vw, 32px);
-
   display: flex;
   gap: 16px;
   justify-content: center; /* center across the page */
   align-items: center;
   flex-wrap: wrap;
+  background: #000000;
 }
 /* Footer text/link styling */
 .site-footer .footer-text{

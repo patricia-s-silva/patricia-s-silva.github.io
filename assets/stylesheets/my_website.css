@@ -22,15 +22,6 @@ time, mark, audio, video {
   vertical-align: baseline;
 } */
 
-/* Override Primer theme width constraints */
-.container,
-.container-lg,
-.container-md,
-.container-xl,
-.markdown-body {
-  max-width: 1200px !important;     /* or 1280px */
-}
-
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
@@ -626,4 +617,14 @@ details[open] > summary::after {
   padding: 0px;
   border:2px solid #6c6c6c;
   box-shadow: 8px 8px 10px rgba(0, 0, 0, 0.5);
+}
+
+main,
+.page-content,
+.markdown-body {
+  max-width: none !important;
+  width: min(1400px, 100%) !important;   /* keeps it from getting absurdly wide */
+  margin: 0 auto !important;
+  padding-left: clamp(16px, 3vw, 40px) !important;
+  padding-right: clamp(16px, 3vw, 40px) !important;
 }

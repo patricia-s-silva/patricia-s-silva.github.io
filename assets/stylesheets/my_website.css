@@ -128,16 +128,40 @@ section {
 
 /* Footer */ 
 .site-footer {
-  border-top: 1px solid var(--border);
-  padding-block: 1.25rem;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  box-sizing: border-box;
+  background: #000;
+  color: #fff;
+  padding: 18px 0;
 }
-.footer-inner {
+/* Inner footer content alignment */
+.site-footer .footer-inner{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: clamp(16px, 3vw, 32px);
+  padding-right: clamp(16px, 3vw, 32px);
+
   display: flex;
-  justify-content: space-between;
-  gap: 1rem;
+  gap: 16px;
+  justify-content: center; /* center across the page */
+  align-items: center;
   flex-wrap: wrap;
 }
-.footer-text { margin: 0; }
+/* Footer text/link styling */
+.site-footer .footer-text{
+  margin: 0;
+}
+.site-footer a{
+  color: #fff;
+  text-decoration: underline;
+}
+
+.site-footer a:hover,
+.site-footer a:focus-visible{
+  text-decoration: none;
+}
 /* Footer */ 
 
 /* Icons on header */

@@ -646,30 +646,6 @@ main,
   padding-right: clamp(16px, 3vw, 40px) !important;
 }
 
-/* Full-bleed nav background (break out of any theme container) */
-.site-nav{
-  width: 100vw !important;
-  margin-left: calc(50% - 50vw) !important;
-  margin-right: calc(50% - 50vw) !important;
-  box-sizing: border-box;
-
-  background: rgba(255,255,255,0.92);
-  border-top: 1px solid rgba(0,0,0,0.10);
-  border-bottom: 1px solid rgba(0,0,0,0.10);
-}
-
-/* Links container stays aligned with the main content width */
-.site-nav .nav-inner{
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 12px clamp(16px, 3vw, 32px);
-
-  display: flex;
-  gap: 18px;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
 /* Full-width (full-bleed) header background */
 .header {
   width: 100vw;
@@ -690,4 +666,16 @@ main,
   padding-left: clamp(16px, 3vw, 32px);
   padding-right: clamp(16px, 3vw, 32px);
   box-sizing: border-box;
+}
+
+/* Full-bleed nav background (break out of any theme container) */
+.site-nav{
+  width: 100vw !important;
+  margin-left: calc(50% - 50vw) !important;
+  margin-right: calc(50% - 50vw) !important;
+  box-sizing: border-box;
+
+  background: rgba(255,255,255,0.92);
+  border-top: 1px solid rgba(0,0,0,0.10);
+  border-bottom: 1px solid rgba(0,0,0,0.10);
 }

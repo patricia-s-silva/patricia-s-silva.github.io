@@ -331,7 +331,7 @@ section {
   padding: 15px
 }
 
-/* Type selectors 
+/* Type selectors */
 
 nav {
   padding: 10px;
@@ -346,7 +346,7 @@ nav {
   padding-top: 12px;
   padding-bottom: 12px;
   flex-wrap: wrap;
-}*/
+}
 
 body {
   font-family: system-ui, sans-serif;

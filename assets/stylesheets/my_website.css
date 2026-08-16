@@ -52,12 +52,11 @@ section {
 }
 
 .container {
-  max-width: var(--content-max);
-  margin-inline: auto;
-}
-
-.container.media-block {
-  max-width: 1200px;
+  max-width: 1200px;                 /* try 1100–1280 */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(16px, 3vw, 32px);
+  padding-right: clamp(16px, 3vw, 32px);
 }
 
 /* Header */
@@ -177,9 +176,31 @@ section {
 .media-body { min-width: 0; } /* prevents overflow on long words/links */
 @media (max-width: 640px) {
   .media-block {
+    flex: 1 1 auto;
+    min-width: 0; 
     flex-direction: column;
     align-items: center;
     text-align: left; /* or center, your preference */
+  }
+}
+
+/* Control the image size */
+.media-block > img {
+  width: clamp(170px, 22vw, 260px);
+  height: auto;
+  flex: 0 0 auto;
+  border-radius: 16px;
+  border: 1px solid #e6e6e6;
+  background: #f4f4f4;              /* helps transparent PNGs */
+}
+
+/* On small screens, stack */
+@media (max-width: 720px) {
+  .media-block {
+    flex-direction: column;
+  }
+  .media-block > img {
+    width: min(320px, 100%);
   }
 }
 /* Image and text blocks */

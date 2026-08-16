@@ -660,9 +660,9 @@ main,
   margin-right: calc(50% - 50vw) !important;
   box-sizing: border-box;
 
-  background: #000000;
-  border-top: 1px solid rgba(0,0,0,0.10);
-  border-bottom: 1px solid rgba(0,0,0,0.10);
+  background: #000000 !important;; 
+  border-top: 1px solid rgba(255,255,255,0.15);
+  border-bottom: 1px solid rgba(255,255,255,0.15);
 }
 
 .site-nav .nav-inner{

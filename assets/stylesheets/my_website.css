@@ -641,6 +641,7 @@ main,
   /* keep your existing background image rules */
   background-position: center;
   background-size: cover;
+  background-color: #000000;
 }
 
 /* Keep header content aligned with the rest of the page */

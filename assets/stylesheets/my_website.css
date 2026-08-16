@@ -61,6 +61,12 @@ section {
 
 /* Header */
 .header {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  box-sizing: border-box;
+  background-position: center;
+  background-size: cover;
   text-align: center;
 
   /* Don’t fix the height; let content define it */

@@ -24,11 +24,6 @@ main {
   padding-inline: var(--gutter);
 }
 
-/* .section,
-section {
-  padding-block: var(--section-pad);
-} */
-
 .container {
   max-width: 1200px;                 /* try 1100–1280 */
   margin-left: auto;
@@ -519,6 +514,12 @@ DOIjournal {
   line-height: 1;
   display: inline-flex;
   align-items: center;
+}
+.cv-download-wrapper {
+  text-align: center;
+  margin: 20px auto;
+  padding: 10px 0;
+  background-color: transparent;  /* no grey background */
 }
 /* Responsive adjustments for mobile */
 @media (max-width: 600px) {

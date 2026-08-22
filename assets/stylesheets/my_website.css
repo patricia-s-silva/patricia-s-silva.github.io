@@ -611,7 +611,7 @@ summary::after {
   content: '';
   width: 18px;
   height: 15px;
-  background: url('D:/WebDesign/My_website/assets/images/down-arrow.svg');
+  background: url('../images/down-arrow.svg');
   background-size: cover;
   margin-left: .75em;
   transition: 0.2s;

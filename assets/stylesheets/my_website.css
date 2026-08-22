@@ -37,7 +37,9 @@ section {
   padding-right: clamp(16px, 3vw, 32px);
 }
 
+/* ---------------------------------------------------- */
 /* Header */
+/* ---------------------------------------------------- */
 .header {
   text-align: center;
 
@@ -102,9 +104,34 @@ section {
   outline: 3px solid #ffbf47;
   outline-offset: 2px;
 }
-/* Header */
+/* Icons on header */
+.social {
+  display: flex;
+  gap: .75rem;
+  align-items: center;
+}
+.icon-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: .4rem;
+  border-radius: .5rem;
+  color: var(--text);
+}
+.icon {
+  display: block;
+}
+.icon-link:hover {
+  background: color-mix(in srgb, var(--text) 10%, transparent);
+}
+.icon-link:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
 
-/* Footer */ 
+/* ---------------------------------------------------- */
+/* Footer */
+/* ---------------------------------------------------- */
 .site-footer {
   width: 100vw;
   margin-left: calc(50% - 50vw);
@@ -134,40 +161,14 @@ section {
   color: #fff;
   text-decoration: underline;
 }
-
 .site-footer a:hover,
 .site-footer a:focus-visible{
   text-decoration: none;
 }
-/* Footer ------------------------------------------ */ 
 
-/* Icons on header --------------------------------- */
-.social {
-  display: flex;
-  gap: .75rem;
-  align-items: center;
-}
-.icon-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: .4rem;
-  border-radius: .5rem;
-  color: var(--text);
-}
-.icon {
-  display: block;
-}
-.icon-link:hover {
-  background: color-mix(in srgb, var(--text) 10%, transparent);
-}
-.icon-link:focus-visible {
-  outline: 3px solid var(--focus);
-  outline-offset: 2px;
-}
-/* Icons on header ------------------------------------ */
-
-/* Image and text blocks ------------------------------ */
+/* ---------------------------------------------------- */
+/* Image and text blocks */
+/* ---------------------------------------------------- */
 .media-block {
   display: flex;
   gap: 1.25rem;
@@ -183,7 +184,6 @@ section {
   min-width: 0; 
   flex: 1 1 auto;
 } /* prevents overflow on long words/links */
-
 /* Float image to the right, text wraps around it */
 .img-wrap-right {
   float: right;
@@ -193,7 +193,6 @@ section {
   margin: 0 0 1rem 1.5rem;          /* space on left and bottom */
   display: block;
 }
-
 /* Float image to the left, text wraps around it */
 .img-wrap-left {
   float: left;
@@ -203,14 +202,12 @@ section {
   margin: 0 1.5rem 1rem 0;          /* space on right and bottom */
   display: block;
 }
-
 /* Always clear floats after a section so layout doesn't break */
 section::after {
   content: "";
   display: table;
   clear: both;
 }
-
 /* On small phones: stop floating, stack images above text */
 @media (max-width: 480px) {
   .img-wrap-right,
@@ -221,18 +218,6 @@ section::after {
     display: block;
   }
 }
-
-/* @media (max-width: 720px) {
-  .media-block {
-    flex: 1 1 auto;
-    min-width: 0; 
-    flex-direction: column;
-    align-items: center;
-    text-align: left;
-  }
-  .media-block > img { width: min(320px, 100%); }
-  } */
-
 /* Control the image size */
 .media-block > img {
   width: clamp(170px, 22vw, 260px);
@@ -243,7 +228,6 @@ section::after {
   background: #f4f4f4;              /* helps transparent PNGs */
 }
 /* Image and text blocks */
-
 .button_profile {
   border: none;
   color: white;
@@ -263,40 +247,22 @@ section::after {
   letter-spacing: 1px;
   /* border-radius: 20px; */
 }
-
 .button_profile:hover {
   background-color: #d3d3d3;
   color: rgb(0, 0, 0);
   border-radius: 20px;
 }
-
 .crop img {
   object-fit:scale-down;
   width:  100px;
   height: 220px;
 }
-
-/* .section {
-  display: inline-block;
-  border: none;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 75%;
-  padding: 10px;
-  box-shadow: 0 2px 4px darkslategray;
-  text-align: center;
-  background-color: rgb(247, 247, 247);
-} */
-
 .image-with-border {
     padding: 5px;
     background:white; 
     border: 2px solid grey;
     border-radius: 20px
 }
-
 .image40-rounded-corners {
   width: 40%; 
   float: right; 
@@ -305,14 +271,15 @@ section::after {
   padding: 15px
 }
 
+/* ---------------------------------------------------- */
 /* Type selectors */
+/* ---------------------------------------------------- */
 
 nav {
   padding: 10px;
   text-align: center;
   background-color: #000000;
 }
-
 .nav-inner {
   display: flex;
   gap: 18px;
@@ -321,7 +288,6 @@ nav {
   padding-bottom: 12px;
   flex-wrap: wrap;
 }
-
 section {
   background-color: whitesmoke;
   display: block;           /* changed from inline-block */
@@ -336,18 +302,6 @@ section {
   margin-right: auto;
   box-shadow: 0 2px 4px darkslategray;
 }
-
-/* section_left_align {
-  background-color: whitesmoke;
-  display: inline-block; 
-  text-align: left;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  padding: 2%;
-  width: 68%;
-  box-shadow: 0 2px 4px darkslategray;
-} */
-
 .sectionbooks {
   background-color: transparent;
   display: inline-block; 
@@ -357,22 +311,18 @@ section {
   padding: 2%;
   width: 95%;
 }
-
 .smallertext {
   font-size: 15px;
 }
-
 h1 {
   font-family: "Trebuchet MS", sans-serif;
 }
-
 h2 {
   font-size: 20px;
   letter-spacing: 2px;
   font-variant: small-caps;
   color: rgb(63, 111, 146);
 } 
-
 h3_background {
   display: flex;
   font-size: 16px;
@@ -383,7 +333,6 @@ h3_background {
   border-radius: 5px;
   /* align-items: center; */
 }
-
 /* Style all font awesome icons */
 .fa {
   font-size: 50px;
@@ -391,24 +340,10 @@ h3_background {
   text-align: center;
   text-decoration: none;
 }
-
 /* Add a hover effect if you want */
 .fa:hover {
   opacity: 0.7;
 }
-
-/* Set a specific color for each brand */
-
-/* Facebook */
-.fa-facebook {
-  color: white;
-}
-
-/* Twitter */
-.fa-twitter {
-  color: white;
-}
-
 .button {
   background-color: transparent; 
   border: none;
@@ -419,7 +354,6 @@ h3_background {
   font-size: 16px;
   margin: 4px 2px;
 }
-
 .button1 {
   border-radius: 10px;
   border: 1px solid #000000;
@@ -427,13 +361,11 @@ h3_background {
   padding: 8px;
   background-color: rgb(168, 178, 189);
 }
-
 .fit img {
   height: 100%;
   width: 100%;
   object-fit: contain;
 }
-
 progress {
   border-radius: 7px; 
   width: 200px;
@@ -450,7 +382,6 @@ progress::-webkit-progress-value {
   border-radius: 7px;
   /* box-shadow: 1px 1px 5px 3px rgba(0, 0, 0, 0.8); */
 }
-
 /* Create two equal columns that floats next to each other */
 .column_left {
   float: left;
@@ -458,7 +389,6 @@ progress::-webkit-progress-value {
   display: inline;
   text-align: left;
 }
-
 .column_right {
   float: left;
   width: 49%;
@@ -466,7 +396,6 @@ progress::-webkit-progress-value {
   text-align: right;
   margin-right: 1%;
 }
-
 /* Clear floats after the columns */
 .row:after {
   content: "";
@@ -486,7 +415,6 @@ progress::-webkit-progress-value {
   transition: .5s ease;
   backface-visibility: hidden;
 }
-
 .middle {
   transition: .5s ease;
   opacity: 0;
@@ -498,7 +426,6 @@ progress::-webkit-progress-value {
   line-height: 100%;
   text-align: center;
 }
-
 .texthover a {
   background-color: white;
   color: black;
@@ -511,13 +438,11 @@ progress::-webkit-progress-value {
 }
 
 /* DOI buttons */
-
 .divider {
   display:inline-block;
   padding: 10px;
   vertical-align: middle;
 }
-
 .DOItext a {
   font-size: 14px;
   color: black;
@@ -526,7 +451,6 @@ progress::-webkit-progress-value {
   font-weight: bold;
   text-decoration: none;
 }
-
 .button2 {
   background-color: #ffffff;
   border: 2px solid #494949;
@@ -534,17 +458,14 @@ progress::-webkit-progress-value {
   padding: 5px;
   border-width: thin;
 }
-
 DOItitle {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bold;
 }
-
 DOIauthors {
   font-size: 14px;
   font-style: italic; 
 }
-
 DOIjournal {
   font-size: 14px;
 }

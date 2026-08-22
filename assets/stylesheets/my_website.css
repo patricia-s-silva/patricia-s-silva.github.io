@@ -471,6 +471,68 @@ DOIjournal {
 }
 
 /* ---------------------------------------------------- */
+/* Button to download CV - CV page */
+/* ---------------------------------------------------- */
+
+.cv-download-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+.cv-download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background-color: #1a3a5c;
+  color: #ffffff;
+  text-decoration: none;
+  font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  padding: 0.85rem 2.2rem;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(26, 58, 92, 0.25);
+  transition: background-color 0.25s ease,
+              transform 0.25s ease,
+              box-shadow 0.25s ease;
+  white-space: nowrap;
+}
+.cv-download-btn:hover,
+.cv-download-btn:focus {
+  background-color: #24527a;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(26, 58, 92, 0.45);
+  outline: none;
+}
+.cv-download-btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(26, 58, 92, 0.35);
+}
+.cv-download-icon {
+  font-size: 1.1rem;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+}
+/* Responsive adjustments for mobile */
+@media (max-width: 600px) {
+  .cv-download-btn {
+    font-size: 0.92rem;
+    padding: 0.75rem 1.6rem;
+  }
+
+  .cv-download-icon {
+    font-size: 1rem;
+  }
+}
+
+/* ---------------------------------------------------- */
 /* Drop down boxes (details) - For publications */
 /* ---------------------------------------------------- */
 
@@ -512,7 +574,6 @@ details[open] > summary::after {
   border:2px solid #6c6c6c;
   box-shadow: 8px 8px 10px rgba(0, 0, 0, 0.5);
 }
-
 
 /* ---------------------------------------------------- */
 /* Full page layout - must be at the bottom of CSS */

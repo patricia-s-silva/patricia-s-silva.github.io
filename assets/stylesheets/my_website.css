@@ -447,6 +447,15 @@ DOIauthors {
 DOIjournal {
   font-size: 14px;
 }
+/* Forces long URLs and text to wrap instead
+   of bleeding outside their container */
+section a,
+section p,
+section li {
+  overflow-wrap: break-word;   /* breaks long words/URLs onto the next line */
+  word-break: break-word;      /* fallback for older browsers */
+  hyphens: auto;               /* adds hyphens where text is broken, if needed */
+}
 
 /* ---------------------------------------------------- */
 /* Button to download CV - CV page */

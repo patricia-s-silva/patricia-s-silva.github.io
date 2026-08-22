@@ -358,12 +358,15 @@ body {
 
 section {
   background-color: whitesmoke;
-  display: inline-block; 
+  display: block;           /* changed from inline-block */
   text-align: left;
   margin-top: 20px;
   margin-bottom: 20px;
-  padding: 2%;
-  width: 68%;
+  padding: clamp(1rem, 3vw, 2rem);   /* responsive padding */
+  width: 92%;               /* nearly full-width on all screens */
+  max-width: 1100px;        /* cap on very wide monitors */
+  margin-left: auto;
+  margin-right: auto;
   box-shadow: 0 2px 4px darkslategray;
 }
 

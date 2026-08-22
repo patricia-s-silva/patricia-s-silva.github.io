@@ -1,27 +1,3 @@
-/* Reset CSS */
-/* http://meyerweb.com/eric/tools/css/reset/ 2. v2.0 | 20110126
-  License: none (public domain) */
-/*html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-} */
-
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
@@ -46,10 +22,10 @@ main {
   padding-inline: var(--gutter);
 }
 
-.section,
+/* .section,
 section {
   padding-block: var(--section-pad);
-}
+} */
 
 .container {
   max-width: 1200px;                 /* try 1100–1280 */
@@ -161,9 +137,9 @@ section {
 .site-footer a:focus-visible{
   text-decoration: none;
 }
-/* Footer */ 
+/* Footer ------------------------------------------ */ 
 
-/* Icons on header */
+/* Icons on header --------------------------------- */
 .social {
   display: flex;
   gap: .75rem;
@@ -187,9 +163,9 @@ section {
   outline: 3px solid var(--focus);
   outline-offset: 2px;
 }
-/* Icons on header */
+/* Icons on header ------------------------------------ */
 
-/* Image and text blocks */
+/* Image and text blocks ------------------------------ */
 .media-block {
   display: flex;
   gap: 1.25rem;
@@ -206,16 +182,54 @@ section {
   flex: 1 1 auto;
 } /* prevents overflow on long words/links */
 
-@media (max-width: 720px) {
+/* Float image to the right, text wraps around it */
+.img-wrap-right {
+  float: right;
+  width: clamp(140px, 35%, 300px);  /* responsive width */
+  height: auto;
+  border-radius: 10px;
+  margin: 0 0 1rem 1.5rem;          /* space on left and bottom */
+  display: block;
+}
+
+/* Float image to the left, text wraps around it */
+.img-wrap-left {
+  float: left;
+  width: clamp(140px, 35%, 300px);
+  height: auto;
+  border-radius: 10px;
+  margin: 0 1.5rem 1rem 0;          /* space on right and bottom */
+  display: block;
+}
+
+/* Always clear floats after a section so layout doesn't break */
+section::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* On small phones: stop floating, stack images above text */
+@media (max-width: 480px) {
+  .img-wrap-right,
+  .img-wrap-left {
+    float: none;
+    width: min(100%, 320px);
+    margin: 0 auto 1rem auto;   /* centered on phone */
+    display: block;
+  }
+}
+
+/* @media (max-width: 720px) {
   .media-block {
     flex: 1 1 auto;
     min-width: 0; 
     flex-direction: column;
     align-items: center;
-    text-align: left; /* or center, your preference */
+    text-align: left;
   }
   .media-block > img { width: min(320px, 100%); }
-}
+  } */
 
 /* Control the image size */
 .media-block > img {

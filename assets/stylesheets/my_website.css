@@ -470,7 +470,9 @@ DOIjournal {
   font-size: 14px;
 }
 
-/* Details */
+/* ---------------------------------------------------- */
+/* Drop down boxes (details) - For publications */
+/* ---------------------------------------------------- */
 
 summary {
   list-style: none;
@@ -480,7 +482,6 @@ summary {
   border-radius: 5px;
   align-items: center;
 }
-
 summary::after {
   content: '';
   width: 18px;
@@ -490,13 +491,11 @@ summary::after {
   margin-left: .75em;
   transition: 0.2s;
 }
-
 details {
   border-radius: 5px;
   padding: 10px;
   font-family: system-ui, sans-serif;
 }
-
 details[open] > summary::after {
   transform: rotate(180deg);
   background-color: rgb(208, 208, 208);
@@ -504,7 +503,6 @@ details[open] > summary::after {
 }
 
 /* Center images in Home */
-
 .latest {
   text-align: center;
   display: inline-block;
@@ -515,6 +513,10 @@ details[open] > summary::after {
   box-shadow: 8px 8px 10px rgba(0, 0, 0, 0.5);
 }
 
+
+/* ---------------------------------------------------- */
+/* Full page layout - must be at the bottom of CSS */
+/* ---------------------------------------------------- */
 main,
 .page-content,
 .markdown-body {
@@ -524,7 +526,6 @@ main,
   padding-left: clamp(16px, 3vw, 40px) !important;
   padding-right: clamp(16px, 3vw, 40px) !important;
 }
-
 /* Full-width (full-bleed) header background */
 .header {
   width: 100vw;
@@ -537,22 +538,11 @@ main,
   background-size: cover;
   background-color: #000000;
 }
-
-/* Keep header content aligned with the rest of the page
-.header > * {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: clamp(16px, 3vw, 32px);
-  padding-right: clamp(16px, 3vw, 32px);
-  box-sizing: border-box;
-} */
  /* Let header content span full viewport width (do NOT constrain like .header > *) */
 .header > *{
   max-width: none !important;
   width: 100% !important;
 }
-
 /* Full-width inner wrapper + centered content */
 .header .header__inner{
   max-width: none !important;
@@ -568,16 +558,13 @@ main,
   padding-right: clamp(16px, 3vw, 32px);
   box-sizing: border-box;
 }
-
 /* Ensure text + icons are centered */
 .header .header-id{
   text-align: center;
 }
-
 .header .social{
   justify-content: center;
 }
-
 /* Full-bleed nav background (break out of any theme container) */
 .site-nav{
   width: 100vw !important;
@@ -589,7 +576,6 @@ main,
   border-top: 1px solid rgba(255,255,255,0.15);
   border-bottom: 1px solid rgba(255,255,255,0.15);
 }
-
 .site-nav .nav-inner{
   display: flex;
   gap: 18px;

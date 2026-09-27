@@ -85,6 +85,58 @@ title: Home
     <div class="section">
 
       <h2>Latest Work</h2>
+
+      <div class="carousel-wrapper">
+
+        <!-- Left arrow -->
+        <button class="carousel-btn carousel-btn--prev" aria-label="Previous paper">
+          &#8592;
+        </button>
+
+        <!-- Slides -->
+        <div class="carousel-track-container">
+          <ul class="carousel-track">
+
+            <!-- PAPER 1 — replace src and href with your own -->
+            <li class="carousel-slide">
+              <a href="https://doi.org/10.XXXX/XXXXXX" target="_blank" rel="noopener" aria-label="View paper 1">
+                <img src="/assets/images/papers/paper1.jpg" alt="Paper 1 title here">
+                <p class="carousel-caption">Paper title here</p>
+              </a>
+            </li>
+
+            <!-- PAPER 2 -->
+            <li class="carousel-slide">
+              <a href="https://doi.org/10.XXXX/XXXXXX" target="_blank" rel="noopener" aria-label="View paper 2">
+                <img src="/assets/images/papers/paper2.jpg" alt="Paper 2 title here">
+                <p class="carousel-caption">Paper title here</p>
+              </a>
+            </li>
+
+            <!-- PAPER 3 -->
+            <li class="carousel-slide">
+              <a href="https://doi.org/10.XXXX/XXXXXX" target="_blank" rel="noopener" aria-label="View paper 3">
+                <img src="/assets/images/papers/paper3.jpg" alt="Paper 3 title here">
+                <p class="carousel-caption">Paper title here</p>
+              </a>
+            </li>
+
+            <!-- Add more papers by copying a <li> block above -->
+
+          </ul>
+        </div>
+
+        <!-- Right arrow -->
+        <button class="carousel-btn carousel-btn--next" aria-label="Next paper">
+          &#8594;
+        </button>
+
+        <!-- Dot indicators -->
+        <div class="carousel-dots"></div>
+
+      </div>
+
+      <!-- <h2>Latest Work</h2>
       <br>
       <center>
         <a href="https://essd.copernicus.org/articles/17/5377/2025/" target="_blank">
@@ -98,9 +150,48 @@ title: Home
             alt="First page of the paper The climatic patterns that control regional fire activity in the Brazilian savanna"
             class="latest"
             style="width:40%"></a>
-      </center>
+      </center> -->
     </div>
 	</section>
+
+  <script>
+  const track       = document.querySelector('.carousel-track');
+  const slides      = Array.from(track.children);
+  const dotsContainer = document.querySelector('.carousel-dots');
+  const prevBtn     = document.querySelector('.carousel-btn--prev');
+  const nextBtn     = document.querySelector('.carousel-btn--next');
+
+  let current = 0;
+
+  // Build dots dynamically based on number of slides
+  slides.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.classList.add('carousel-dot');
+    dot.setAttribute('aria-label', `Go to paper ${i + 1}`);
+    if (i === 0) dot.classList.add('active');
+    dot.addEventListener('click', () => goTo(i));
+    dotsContainer.appendChild(dot);
+  });
+
+  const dots = Array.from(dotsContainer.children);
+
+  function goTo(index) {
+    track.style.transform = `translateX(-${index * 100}%)`;
+    dots[current].classList.remove('active');
+    current = index;
+    dots[current].classList.add('active');
+  }
+
+  prevBtn.addEventListener('click', () => {
+    const newIndex = (current - 1 + slides.length) % slides.length;
+    goTo(newIndex);
+  });
+
+  nextBtn.addEventListener('click', () => {
+    const newIndex = (current + 1) % slides.length;
+    goTo(newIndex);
+  });
+</script>
 
 </body>
 

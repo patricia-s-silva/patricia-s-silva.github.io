@@ -526,6 +526,132 @@ section li {
 }
 
 /* ---------------------------------------------------- */
+/* Carousel for Latest Work */
+/* ---------------------------------------------------- */
+
+/* Outer wrapper — centers everything */
+.carousel-wrapper {
+  position: relative;
+  width: 68%;
+  margin: 0 auto 2rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Hides overflow so only current slide shows */
+.carousel-track-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+/* The sliding row of all slides */
+.carousel-track {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Each individual slide */
+.carousel-slide {
+  min-width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/* Paper image — fixed height, auto width, centered */
+.carousel-slide img {
+  height: 320px;               /* all images same height */
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;         /* no cropping, full image visible */
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0 2px 4px darkslategray;
+}
+
+/* Paper caption / title below image */
+.carousel-caption {
+  font-family: "Trebuchet MS", sans-serif;
+  font-size: 0.9rem;
+  font-variant: small-caps;
+  letter-spacing: 1px;
+  color: rgb(63, 111, 146);
+  margin-top: 0.6rem;
+  padding: 0 1rem;
+}
+
+/* Left and right arrow buttons */
+.carousel-btn {
+  position: absolute;
+  top: calc(320px / 2);        /* vertically centered on image */
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.45);
+  color: #ffffff;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 10;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-btn:hover {
+  background-color: rgb(63, 111, 146);
+}
+
+.carousel-btn--prev { left: -46px; }
+.carousel-btn--next { right: -46px; }
+
+/* Dot indicators */
+.carousel-dots {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  margin-top: 0.8rem;
+}
+
+.carousel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgb(208, 208, 208);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.carousel-dot.active {
+  background-color: rgb(63, 111, 146);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 720px) {
+  .carousel-wrapper {
+    width: 95%;
+  }
+
+  .carousel-slide img {
+    height: 220px;             /* shorter on mobile */
+  }
+
+  .carousel-btn--prev { left: 0; }
+  .carousel-btn--next { right: 0; }
+
+  .carousel-btn {
+    top: calc(220px / 2);
+  }
+}
+
+/* ---------------------------------------------------- */
 /* Drop down boxes (details) - For publications */
 /* ---------------------------------------------------- */
 
